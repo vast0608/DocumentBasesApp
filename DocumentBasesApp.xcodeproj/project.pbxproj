@@ -13,6 +13,7 @@
 		2C680B121FD1581D0042856F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C680B111FD1581D0042856F /* Assets.xcassets */; };
 		2C680B151FD1581D0042856F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C680B131FD1581D0042856F /* LaunchScreen.storyboard */; };
 		2C680B181FD1581D0042856F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C680B171FD1581D0042856F /* main.m */; };
+		2C680B201FD158500042856F /* DocumentBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C680B1F1FD158500042856F /* DocumentBrowserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		2C680B141FD1581D0042856F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C680B161FD1581D0042856F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C680B171FD1581D0042856F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C680B1E1FD158500042856F /* DocumentBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentBrowserViewController.h; sourceTree = "<group>"; };
+		2C680B1F1FD158500042856F /* DocumentBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentBrowserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				2C680B091FD1581D0042856F /* AppDelegate.m */,
 				2C680B0B1FD1581D0042856F /* ViewController.h */,
 				2C680B0C1FD1581D0042856F /* ViewController.m */,
+				2C680B1E1FD158500042856F /* DocumentBrowserViewController.h */,
+				2C680B1F1FD158500042856F /* DocumentBrowserViewController.m */,
 				2C680B0E1FD1581D0042856F /* Main.storyboard */,
 				2C680B111FD1581D0042856F /* Assets.xcassets */,
 				2C680B131FD1581D0042856F /* LaunchScreen.storyboard */,
@@ -142,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C680B201FD158500042856F /* DocumentBrowserViewController.m in Sources */,
 				2C680B0D1FD1581D0042856F /* ViewController.m in Sources */,
 				2C680B181FD1581D0042856F /* main.m in Sources */,
 				2C680B0A1FD1581D0042856F /* AppDelegate.m in Sources */,
@@ -279,6 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JXE98AWWC2;
 				INFOPLIST_FILE = DocumentBasesApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lxl.test.DocumentBasesApp;
@@ -292,6 +299,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JXE98AWWC2;
 				INFOPLIST_FILE = DocumentBasesApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lxl.test.DocumentBasesApp;
