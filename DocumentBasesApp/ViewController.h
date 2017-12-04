@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property(nonatomic, strong)UIImageView *imageV;
+@property(nonatomic, strong)UILabel *label;
+
+-(void)contentsData:(NSData *)contentsData fileURL:(NSURL *)fileURL fileName:(NSString *)fileName;
 
 @end
 

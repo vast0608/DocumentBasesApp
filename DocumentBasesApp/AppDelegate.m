@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DocumentBrowserViewController.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -47,25 +47,29 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)inputURL options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
-    // Ensure the URL is a file URL
-    if (!inputURL.isFileURL) {
-        return NO;
-    }
-    
-    // Reveal / import the document at the URL
-    DocumentBrowserViewController *documentBrowserViewController = (DocumentBrowserViewController *)self.window.rootViewController;
-    [documentBrowserViewController revealDocumentAtURL:inputURL importIfNeeded:NO completion:^(NSURL * _Nullable revealedDocumentURL, NSError * _Nullable error) {
-        if (error) {
-            // Handle the error appropriately
-            NSLog(@"Failed to reveal the document at URL %@ with error: '%@'", inputURL, error);
-            return;
-        }
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_9_0
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(nullable NSString *)sourceApplication annotation:(id)annotation
+{
+    //NSLog(@"从别的应用分享过来的----%@----%@---%@",application,url,annotation);
+
+    NSString *filenName = [[[NSString stringWithFormat:@"%@",url] componentsSeparatedByString:@"/"].lastObject componentsSeparatedByString:@"."].firstObject;
         
-        // Present the Document View Controller for the revealed URL
-        [documentBrowserViewController presentDocumentAtURL:revealedDocumentURL];
-    }];
+    [(ViewController *)self.window.rootViewController contentsData:[NSData dataWithContentsOfURL:url] fileURL:url fileName:filenName];
+    
     return YES;
 }
+
+#else
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(nonnull NSDictionary<NSString *,id> *)options
+{
+    //NSLog(@"从别的应用分享过来的----%@----%@---%@",application,url,options);
+    
+    NSString *filenName = [[[NSString stringWithFormat:@"%@",url] componentsSeparatedByString:@"/"].lastObject componentsSeparatedByString:@"."].firstObject;
+
+    [(ViewController *)self.window.rootViewController contentsData:[NSData dataWithContentsOfURL:url] fileURL:url fileName:filenName];
+    
+    return YES;
+}
+#endif
 
 @end
